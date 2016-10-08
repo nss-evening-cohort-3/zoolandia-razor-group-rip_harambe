@@ -1,4 +1,4 @@
-namespace ZoolandiaRazor.Migrations
+    namespace ZoolandiaRazor.Migrations
 {
     using System;
     using System.Data.Entity;
