@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ZoolandiaRazor.Models;
 
 namespace ZoolandiaRazor.DAL
 {
@@ -16,6 +17,29 @@ namespace ZoolandiaRazor.DAL
         public ZoolandiaRazorRepo(ZoolandiaRazorContext _context)
         {
             Context = _context;
+        }
+
+        public List<Animals> GetAllAnimals()
+        {
+            return Context.Animals.ToList();
+        }
+        
+        //public void AddNewAnimal(string Name, int Age, Exhibit Exhibit, Species Species)
+        //{
+        //    Animals animal = new Animals {Name=Name, Age=Age, Exhibit=Exhibit, Species=Species };
+        //    Context.Animals.Add(animal);
+        //    Context.SaveChanges();
+        //}
+        public void AddNewAnimal(Animals my_animal)
+        {
+            Context.Animals.Add(my_animal);
+            Context.SaveChanges();
+        }
+        public void AddNewAnimal(string name, int age)
+        {
+            Animals animal = new Models.Animals { Name = name, Age = age };
+            Context.Animals.Add(animal);
+            Context.SaveChanges();
         }
     }
 }
