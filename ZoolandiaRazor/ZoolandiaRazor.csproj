@@ -141,6 +141,14 @@
     <Compile Include="Migrations\201610081614090_InitialCreate.Designer.cs">
       <DependentUpon>201610081614090_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.cs" />
+    <Compile Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.Designer.cs">
+      <DependentUpon>201610091415342_RemoveRequiredAttributesFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610091419174_AddVirtualTagforForeignKeyAssignment.cs" />
+    <Compile Include="Migrations\201610091419174_AddVirtualTagforForeignKeyAssignment.Designer.cs">
+      <DependentUpon>201610091419174_AddVirtualTagforForeignKeyAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animals.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -202,6 +210,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610081614090_InitialCreate.resx">
       <DependentUpon>201610081614090_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.resx">
+      <DependentUpon>201610091415342_RemoveRequiredAttributesFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610091419174_AddVirtualTagforForeignKeyAssignment.resx">
+      <DependentUpon>201610091419174_AddVirtualTagforForeignKeyAssignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
