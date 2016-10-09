@@ -41,5 +41,22 @@ namespace ZoolandiaRazor.DAL
             Context.Animals.Add(animal);
             Context.SaveChanges();
         }
+        public Animals FindAnimalByName(string animal_name)
+        {
+            Animals found_animal = Context.Animals.FirstOrDefault(a => a.Name.ToLower() == animal_name.ToLower());
+            return found_animal;
+        }
+
+        public Animals RemoveAnimal(string my_animal)
+        {
+            Animals animal_to_remove = FindAnimalByName(my_animal);
+            if (animal_to_remove != null)
+            {
+                Context.Animals.Remove(animal_to_remove);
+                Context.SaveChanges();
+            }
+            return animal_to_remove;
+        }
+
     }
 }

@@ -17,6 +17,9 @@ namespace ZoolandiaRazor.Tests
         Mock<DbSet<Animals>> mock_animal_table { get; set; }
         List<Animals> animal_list { get; set; }
         ZoolandiaRazorRepo repo { get; set; }
+        Animals my_animal1 = new Animals { AnimalId = 0, Name = "Bob", Age = 30, Exhibit = null, Species = null };
+        Animals my_animal2 = new Animals { AnimalId = 1, Name = "George", Age = 20, Exhibit = null, Species = null };
+        Animals my_animal3 = new Animals { AnimalId = 2, Name = "Vincent", Age = 15, Exhibit = null, Species = null };
 
         public void ConnectMocksToDatastore()
         {
@@ -28,6 +31,10 @@ namespace ZoolandiaRazor.Tests
 
             mock_context.Setup(c => c.Animals).Returns(mock_animal_table.Object);
             mock_animal_table.Setup(t => t.Add(It.IsAny<Animals>())).Callback((Animals a) => animal_list.Add(a));
+            mock_animal_table.Setup(t => t.Remove(It.IsAny<Animals>())).Callback((Animals a) => animal_list.Remove(a));
+            mock_animal_table.Setup(t => t.Add(It.IsAny<Animals>())).Callback((Animals a) => animal_list.Add(a));
+
+
         }
         [TestInitialize]
         public void Initialize()
@@ -36,7 +43,10 @@ namespace ZoolandiaRazor.Tests
             mock_animal_table = new Mock<DbSet<Animals>>();
             animal_list = new List<Animals>();
             repo = new ZoolandiaRazorRepo(mock_context.Object);
+
             ConnectMocksToDatastore();
+
+
         }
         [TestCleanup]
         public void TearDown()
@@ -72,8 +82,7 @@ namespace ZoolandiaRazor.Tests
         [TestMethod]
         public void EnsureCanAddAnimalToDatabase()
         {
-            Animals my_animal = new Animals { Name = "Bob", Age = 35, Exhibit = null, Species = null };
-            repo.AddNewAnimal(my_animal);
+            repo.AddNewAnimal(my_animal1);
             List<Animals> all_animals = repo.GetAllAnimals();
             int expected_animal_count = 1;
             int actual_animal_count = all_animals.Count();
@@ -90,6 +99,89 @@ namespace ZoolandiaRazor.Tests
         }
         [TestMethod]
         public void EnsureCanAddMultipleAnimalsToDatabase()
+        {
+            repo.AddNewAnimal(my_animal1);
+            repo.AddNewAnimal(my_animal2);
+            repo.AddNewAnimal(my_animal3);
+            List<Animals> all_animals = repo.GetAllAnimals();
+            int expected_count = 3;
+            int actual_count = all_animals.Count();
+            Assert.AreEqual(expected_count, actual_count);
+        }
+        [TestMethod]
+        public void EnsureCanLocateAnimalByName()
+        {
+            repo.AddNewAnimal(my_animal1);
+            repo.AddNewAnimal(my_animal2);
+            repo.AddNewAnimal(my_animal3);
+            string animal_name = "bob";
+            int expected_animal_id = 0;
+            Animals actual_animal = repo.FindAnimalByName(animal_name);
+            int actual_animal_id = actual_animal.AnimalId;
+            Assert.AreEqual(expected_animal_id, actual_animal_id);
+
+        }
+        [TestMethod]
+        public void EnsureCanRemoveAnimalFromDatabase()
+        {
+            repo.AddNewAnimal(my_animal1);
+            Assert.IsTrue(repo.GetAllAnimals().Count() == 1);
+            repo.RemoveAnimal("Bob");
+            Assert.IsTrue(repo.GetAllAnimals().Count() == 0);
+        }
+        [TestMethod]
+        public void EnsureCanRemoveMultipleAnimalsFromDatabase()
+        {
+            repo.AddNewAnimal(my_animal1);
+            repo.AddNewAnimal(my_animal2);
+            repo.AddNewAnimal(my_animal3);
+            Assert.IsTrue(repo.GetAllAnimals().Count() == 3);
+            repo.RemoveAnimal("George");
+            repo.RemoveAnimal("Vincent");
+            Assert.IsTrue(repo.GetAllAnimals().Count() == 1);
+        }
+        [TestMethod]
+        public void EnsureCanAddEmployees()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanFindEmployeesByName()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanDeleteEmployeesByName()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanAddHabitats()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanFindHabitatsByName()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanDeleteHabitatsByName()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanAddSpecies()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanFindSpeciesByCommonName()
+        {
+
+        }
+        [TestMethod]
+        public void EnsureCanDeleteSpeciesByCommonName()
         {
 
         }
