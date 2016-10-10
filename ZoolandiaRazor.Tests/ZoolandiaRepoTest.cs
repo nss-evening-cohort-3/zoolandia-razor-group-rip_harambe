@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using Moq;
 using System.Data.Entity;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ZoolandiaRazor.Tests
 {
@@ -23,8 +22,8 @@ namespace ZoolandiaRazor.Tests
         Animals my_animal1 = new Animals { AnimalId = 0, Name = "Bob", Age = 30, Exhibit = null, Species = null };
         Animals my_animal2 = new Animals { AnimalId = 1, Name = "George", Age = 20, Exhibit = null, Species = null };
         Animals my_animal3 = new Animals { AnimalId = 2, Name = "Vincent", Age = 15, Exhibit = null, Species = null };
-        Employee my_employee1 = new Employee { EmployeeId = 0, FirstName = "Amir", LastName = "Rima", Age = 50, Exhibit = null };
-        Employee my_employee2 = new Employee { EmployeeId = 1, FirstName = "Ramos", LastName = "Bargadarg", Age = 40, Exhibit = null };
+        Employee my_employee1 = new Employee { EmployeeId = 0, FirstName = "Amir", LastName = "Rima", Age = 50, Exhibits = null };
+        Employee my_employee2 = new Employee { EmployeeId = 1, FirstName = "Ramos", LastName = "Bargadarg", Age = 40, Exhibits = null };
         Species my_species1 = new Species { Common_Name = "Kangaroo", Scientific_Name = "Hoppitus Skippikus", Habitat = null, SpeciesId = 0 };
         Species my_species2 = new Species { SpeciesId = 1, Common_Name = "Turtle", Scientific_Name = "Shellicus Halficus", Habitat = null };
         HabitatType my_habitat1 = new HabitatType { Habitat = "Forest", HabitatTypeId = 0 };
@@ -145,6 +144,19 @@ namespace ZoolandiaRazor.Tests
             string animal_name = "bob";
             int expected_animal_id = 0;
             Animals actual_animal = repo.FindAnimalByName(animal_name);
+            int actual_animal_id = actual_animal.AnimalId;
+            Assert.AreEqual(expected_animal_id, actual_animal_id);
+
+        }
+        [TestMethod]
+        public void EnsureCanLocateAnimalById()
+        {
+            repo.AddNewAnimal(my_animal1);
+            repo.AddNewAnimal(my_animal2);
+            repo.AddNewAnimal(my_animal3);
+            int animal_id = 2;
+            int expected_animal_id = 2;
+            Animals actual_animal = repo.FindAnimalById(animal_id);
             int actual_animal_id = actual_animal.AnimalId;
             Assert.AreEqual(expected_animal_id, actual_animal_id);
 
