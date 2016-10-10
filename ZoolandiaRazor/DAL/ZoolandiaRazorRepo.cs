@@ -152,10 +152,15 @@ namespace ZoolandiaRazor.DAL
             }
             return species_to_remove;
         }
+        public void AddNewExhibit(Exhibit exhibit)
+        {
+            Context.Exhibit.Add(exhibit);
+            Context.SaveChanges();
+        }
 
         public Exhibit FindExhibitByName(string exhibitName)
         {
-            Exhibit found_exhibit = Context.Exhibit.FirstOrDefault(e => e.Name.ToLower() == exhibitName.ToLower());
+            Exhibit found_exhibit = Context.Exhibit.FirstOrDefault(e => e.Exhibit_Name.ToLower() == exhibitName.ToLower());
             return found_exhibit;
         }
         public Exhibit RemoveExhibitByName(string exhibitName)

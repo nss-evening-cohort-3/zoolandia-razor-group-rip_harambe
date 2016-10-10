@@ -11,7 +11,7 @@ namespace ZoolandiaRazor.Models
         [Key]
         public int ExhibitId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string Exhibit_Name { get; set; }
         [Required]
         public string Habitat_Type { get; set; }
 
