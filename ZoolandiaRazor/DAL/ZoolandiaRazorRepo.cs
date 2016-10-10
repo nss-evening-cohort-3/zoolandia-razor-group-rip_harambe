@@ -62,6 +62,11 @@ namespace ZoolandiaRazor.DAL
             Animals found_animal = Context.Animals.FirstOrDefault(a => a.Name.ToLower() == animal_name.ToLower());
             return found_animal;
         }
+        public Animals FindAnimalById(int animal_id)
+        {
+            Animals found_animal = Context.Animals.FirstOrDefault(a => a.AnimalId == animal_id);
+            return found_animal;
+        }
 
         public Animals RemoveAnimal(string my_animal)
         {
@@ -168,7 +173,6 @@ namespace ZoolandiaRazor.DAL
             }
             return exhibit_to_remove;
         }
-
 
 
     }
