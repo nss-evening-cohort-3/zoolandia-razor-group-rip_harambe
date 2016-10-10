@@ -25,6 +25,8 @@ namespace ZoolandiaRazor.Tests
         List<Species> species_list { get; set; }
         List<HabitatType> habitat_list { get; set; }
 
+
+
         ZoolandiaRazorRepo repo { get; set; }
         Animals my_animal1 = new Animals { AnimalId = 0, Name = "Bob", Age = 30, Exhibit = null, Species = null };
         Animals my_animal2 = new Animals { AnimalId = 1, Name = "George", Age = 20, Exhibit = null, Species = null };
