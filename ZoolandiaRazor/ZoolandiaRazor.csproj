@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201610081614090_InitialCreate.Designer.cs">
       <DependentUpon>201610081614090_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610102204204_ChangeExhibitTableNameBecomesExhibit_Name.cs" />
+    <Compile Include="Migrations\201610102204204_ChangeExhibitTableNameBecomesExhibit_Name.Designer.cs">
+      <DependentUpon>201610102204204_ChangeExhibitTableNameBecomesExhibit_Name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.cs" />
     <Compile Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.Designer.cs">
       <DependentUpon>201610091415342_RemoveRequiredAttributesFrom.cs</DependentUpon>
@@ -210,6 +214,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610081614090_InitialCreate.resx">
       <DependentUpon>201610081614090_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610102204204_ChangeExhibitTableNameBecomesExhibit_Name.resx">
+      <DependentUpon>201610102204204_ChangeExhibitTableNameBecomesExhibit_Name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610091415342_RemoveRequiredAttributesFrom.resx">
       <DependentUpon>201610091415342_RemoveRequiredAttributesFrom.cs</DependentUpon>
