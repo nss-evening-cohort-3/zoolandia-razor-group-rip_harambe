@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Animals</h2>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <ul>
+                @{ foreach (var animal in ViewBag.All_Animals)
+                    {
+                        <li><p>@animal.Name</p><p>@animal.Habitat</p></li>
+                    }
+
+                }
+        </ul>
+    </div>
+</div>
+
+
+
