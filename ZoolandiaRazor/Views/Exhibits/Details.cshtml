@@ -1,0 +1,34 @@
+﻿@model ZoolandiaRazor.Models.Exhibit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exhibit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibit_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibit_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Habitat_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Habitat_Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ExhibitId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

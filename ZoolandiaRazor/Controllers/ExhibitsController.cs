@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ZoolandiaRazor.DAL;
@@ -8,34 +11,33 @@ using ZoolandiaRazor.Models;
 
 namespace ZoolandiaRazor.Controllers
 {
-    public class AnimalController : Controller
+    public class ExhibitsController : Controller
     {
         ZoolandiaRazorRepo repo = new ZoolandiaRazorRepo();
 
-        // GET: Animal
+        // GET: Exhibits
         public ActionResult Index()
         {
-            ViewBag.All_Animals = repo.GetAllAnimals();
+            ViewBag.All_Exhibits = repo.GetAllExhibits();
             return View();
+                
         }
 
-        // GET: Animal/Details/5
+        // GET: Exhibits/Details/5
         public ActionResult Details(int id)
         {
-            ViewBag.This_Animal = repo.FindAnimalById(id);
+            ViewBag.This_Exhibit = repo.GetExhibitById(id);
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Add_Animal(Animals animal)
+        public ActionResult Add_Exhibit(Exhibit exhibit)
         {
             if (ModelState.IsValid)
             {
-                repo.AddNewAnimal(animal);
+                repo.AddNewExhibit(exhibit);
                 return RedirectToAction("Index");
             }
-
-            return View(animal);
+            return View();
         }
     }
 }

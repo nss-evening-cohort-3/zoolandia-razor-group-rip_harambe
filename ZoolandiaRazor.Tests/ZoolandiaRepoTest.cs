@@ -292,6 +292,19 @@ namespace ZoolandiaRazor.Tests
             HabitatType actualName = repo.FindHabitatByName(expectedName);
             Assert.AreEqual(expectedName, actualName.Habitat.ToLower());
         }
+
+        [TestMethod]
+        public void EnsureCanFindHabitatById()
+        {
+            repo.AddNewHabitat(my_habitat1);
+            repo.AddNewHabitat(my_habitat2);
+            int habitat_id = 1;
+            int expected_habitat_id = 1;
+            HabitatType actual_habitat = repo.FindHabitatById(habitat_id);
+            int actual_habitat_id = actual_habitat.HabitatTypeId;
+            Assert.AreEqual(expected_habitat_id, actual_habitat_id);
+
+        }
         [TestMethod]
         public void EnsureCanDeleteHabitatsByName()
         {
