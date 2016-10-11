@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201610091419174_AddVirtualTagforForeignKeyAssignment.Designer.cs">
       <DependentUpon>201610091419174_AddVirtualTagforForeignKeyAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610110100296_EmployeeFix.cs" />
+    <Compile Include="Migrations\201610110100296_EmployeeFix.Designer.cs">
+      <DependentUpon>201610110100296_EmployeeFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animals.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -196,11 +200,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Animal\" />
-    <Folder Include="Views\Employee\" />
     <Folder Include="Views\Habitat\" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610091419174_AddVirtualTagforForeignKeyAssignment.resx">
       <DependentUpon>201610091419174_AddVirtualTagforForeignKeyAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610110100296_EmployeeFix.resx">
+      <DependentUpon>201610110100296_EmployeeFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
