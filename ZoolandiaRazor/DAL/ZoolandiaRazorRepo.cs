@@ -126,6 +126,13 @@ namespace ZoolandiaRazor.DAL
             HabitatType found_habitat = Context.Habitat.FirstOrDefault(e => e.Habitat.ToLower() == habitatName.ToLower());
             return found_habitat;
         }
+
+        public HabitatType FindHabitatById(int habitat_id)
+        {
+            HabitatType found_habitat = Context.Habitat.FirstOrDefault(a => a.HabitatTypeId == habitat_id);
+            return found_habitat;
+        }
+
         public HabitatType RemoveHabitatByType(string habitatType)
         {
             HabitatType habitat_to_remove = FindHabitatByName(habitatType);
@@ -178,7 +185,5 @@ namespace ZoolandiaRazor.DAL
             }
             return exhibit_to_remove;
         }
-
-
     }
 }
