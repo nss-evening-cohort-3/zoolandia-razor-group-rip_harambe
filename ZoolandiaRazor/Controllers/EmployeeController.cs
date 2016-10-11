@@ -24,6 +24,11 @@ namespace ZoolandiaRazor.Controllers
             return View();
         }
 
+        public ActionResult Add()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Add(Employee employee)
         {
