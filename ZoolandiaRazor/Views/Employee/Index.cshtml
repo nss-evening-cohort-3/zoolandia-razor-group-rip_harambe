@@ -3,19 +3,16 @@
     ViewBag.Title = "Index";
 }
 @*@{ var allExhibits = ViewBag.Employee.Exhibits.FirstOrDefault(); }
-@for(var i = 0; i < ViewBag.Employee.Exhibits.Count(); i++)
-{
-    allExhibits = ViewBag.Employee.Exhibits[i];
-}*@
+    @for(var i = 0; i < ViewBag.Employee.Exhibits.Count; i++)
+    {
+        allExhibits = ViewBag.Employee.Exhibits[i];
+    }*@
 <h1>Employees</h1>
 <ul>
     @{ foreach (var employee in ViewBag.Employee)
         {
-            <li>@employee.FirstName</li>
-            <li>@employee.LastName</li>
-            <li>@employee.Age</li>
+            <li>@employee.FirstName @employee.LastName @employee.Age Number of Exhibits = @employee.Exhibits.Count</li>
             @*<li>@allExhibits</li>*@
-            <li>@employee.Exhibits.Count()</li>
         }
 
     }
