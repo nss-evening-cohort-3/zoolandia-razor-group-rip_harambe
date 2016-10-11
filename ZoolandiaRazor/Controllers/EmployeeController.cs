@@ -14,7 +14,7 @@ namespace ZoolandiaRazor.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            ViewBag.Employees = repo.GetAllEmployees();
+            ViewBag.Employee = repo.GetAllEmployees();
             return View();
         }
 

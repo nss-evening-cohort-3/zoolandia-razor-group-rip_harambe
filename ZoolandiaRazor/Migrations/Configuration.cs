@@ -4,6 +4,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using ZoolandiaRazor.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ZoolandiaRazor.DAL.ZoolandiaRazorContext>
     {
@@ -15,6 +16,13 @@
         protected override void Seed(ZoolandiaRazor.DAL.ZoolandiaRazorContext context)
         {
             //  This method will be called after migrating to the latest version.
+
+            //context.Employee.AddOrUpdate(
+            //    e => e.LastName,
+            //    new Employee { LastName = "Maddux" },
+            //    new Employee { LastName = "Ventura" },
+            //    new Employee { LastName = "Cramb" }
+            //    );
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
