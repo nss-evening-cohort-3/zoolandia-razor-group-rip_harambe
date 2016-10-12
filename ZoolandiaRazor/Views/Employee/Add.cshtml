@@ -17,13 +17,13 @@
         <label for="Age">Age: </label>
         <input type="text" id="emp_age" name="Age" />
     </div>
-    @*<select class="form-control">
-        @{ foreach (var exhibit in ViewBag.Exhibit)
+    <select class="form-control">
+        @{ foreach (var exhibit in ViewBag.Exhibits)
             {
                 <option value="@exhibit">@exhibit.Exhibit_Name</option>
             }
         }
-    </select>*@
+    </select>
     <div>
         <label for="button"></label>
         <button type="submit" class="btn btn-default" id="button">Add Employee</button>
