@@ -14,12 +14,17 @@ namespace ZoolandiaRazor.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            ViewBag.Employees = repo.GetAllEmployees();
+            ViewBag.Employee = repo.GetAllEmployees();
             return View();
         }
 
         // GET: Employee/Details/5
         public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        public ActionResult Add()
         {
             return View();
         }
