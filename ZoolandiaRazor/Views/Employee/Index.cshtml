@@ -2,12 +2,6 @@
 @{
     ViewBag.Title = "Index";
 }
-@*@{ var allExhibits = ViewBag.Employee.Exhibits.FirstOrDefault(); }*@
-@*@{ List<Object> allExhibits = new List<Object>(); }*@
-@*@for(var i = 0; i < ViewBag.employee.Exhibits.Count; i++)
-    {
-        allExhibits = ViewBag.Employee.Exhibits[i];
-    }*@
 <h1>Employees</h1>
 <ul>
 
@@ -22,5 +16,6 @@
         }
     }
 </ul>
-<a asp-area="" asp-controller="EmployeeController" asp-action="Add" class="btn btn-default">Add New Employee</a>
+@*<a asp-area="" asp-controller="Employee" asp-action="Add" class="btn btn-primary">Add new Employee</a>*@
+<a href="Add" class="btn btn-primary">Add new Employee</a>
 
