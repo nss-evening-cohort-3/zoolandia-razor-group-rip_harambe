@@ -2,17 +2,23 @@
 @{
     ViewBag.Title = "Index";
 }
-@*@{ var allExhibits = ViewBag.Employee.Exhibits.FirstOrDefault(); }
-    @for(var i = 0; i < ViewBag.Employee.Exhibits.Count; i++)
+@*@{ var allExhibits = ViewBag.Employee.Exhibits.FirstOrDefault(); }*@
+@*@{ List<Object> allExhibits = new List<Object>(); }*@
+@*@for(var i = 0; i < ViewBag.employee.Exhibits.Count; i++)
     {
         allExhibits = ViewBag.Employee.Exhibits[i];
     }*@
 <h1>Employees</h1>
 <ul>
+
     @{ foreach (var employee in ViewBag.Employee)
         {
             <li>@employee.FirstName @employee.LastName @employee.Age Number of Exhibits = @employee.Exhibits.Count </li>
-            @*<li>@allExhibits</li>*@
+            for (var i = 0; i < @employee.Exhibits.Count; i++)
+            {
+                @*<li>i'm here because there's an exhibit!</li>*@
+                <li>@employee.Exhibits.Exhibit_Name[i]</li>  @*  <------------ no worky    *@
+            }
         }
 
     }
