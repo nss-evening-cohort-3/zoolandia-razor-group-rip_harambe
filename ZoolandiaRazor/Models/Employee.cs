@@ -16,6 +16,7 @@ namespace ZoolandiaRazor.Models
         public string LastName { get; set; }
         [Required]
         public int Age { get; set; }
+        [Required]
         public virtual List<Exhibit> Exhibits { get; set; }
 
     }
