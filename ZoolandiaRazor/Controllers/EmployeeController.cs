@@ -26,6 +26,7 @@ namespace ZoolandiaRazor.Controllers
 
         public ActionResult Add()
         {
+            ViewBag.Exhibits = repo.GetAllExhibits();
             return View();
         }
 
