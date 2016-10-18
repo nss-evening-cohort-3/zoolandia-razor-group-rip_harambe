@@ -1,4 +1,5 @@
-﻿
+﻿@using ZoolandiaRazor.Models;
+
 @{
     ViewBag.Title = "Add";
 }
@@ -17,20 +18,22 @@
         <label for="Age">Age: </label>
         <input type="text" id="emp_age" name="Age" />
     </div>
-    <select class="form-control">
+    @*<select class="form-control">
         @{ foreach (var exhibit in ViewBag.Exhibits)
             {
                 <option value="@exhibit">@exhibit.Exhibit_Name</option>
             }
         }
-    </select>
+    </select>*@
 
     @*USE CHECKBOXES TO APPLY MULTIPLE EXHIBITS TO A SINGLE EMPLOYEE OBJ? *@
-    @*@{ foreach (var exhibit in ViewBag.Exhibits)
+    @{ foreach (var exhibit in ViewBag.Exhibits)
         {
+            List<Exhibit> addedExhibitsList = new List<Exhibit>();
             <input type="checkbox" title="@exhibit.Exhibit_Name" value="@exhibit.Exhibit_Name"> @exhibit.Exhibit_Name
+            //addedExhibitsList.Add("value=@exhibit.Exhibit_Name");
         }
-    }*@
+    }
 
     <div>
         <label for="button"></label>

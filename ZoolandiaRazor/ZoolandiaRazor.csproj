@@ -158,6 +158,10 @@
     <Compile Include="Migrations\201610110100296_EmployeeFix.Designer.cs">
       <DependentUpon>201610110100296_EmployeeFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610130202115_EmployeeAddExhibits.cs" />
+    <Compile Include="Migrations\201610130202115_EmployeeAddExhibits.Designer.cs">
+      <DependentUpon>201610130202115_EmployeeAddExhibits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animals.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -238,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610110100296_EmployeeFix.resx">
       <DependentUpon>201610110100296_EmployeeFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610130202115_EmployeeAddExhibits.resx">
+      <DependentUpon>201610130202115_EmployeeAddExhibits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

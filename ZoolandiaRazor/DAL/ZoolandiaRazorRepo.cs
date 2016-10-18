@@ -46,7 +46,7 @@ namespace ZoolandiaRazor.DAL
         {
             return Context.Exhibit.ToList();
         }
-        
+
         //public void AddNewAnimal(string Name, int Age, Exhibit Exhibit, Species Species)
         //{
         //    Animals animal = new Animals {Name=Name, Age=Age, Exhibit=Exhibit, Species=Species };

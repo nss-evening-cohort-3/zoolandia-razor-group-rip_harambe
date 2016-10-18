@@ -1,4 +1,4 @@
-    namespace ZoolandiaRazor.Migrations
+namespace ZoolandiaRazor.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -24,10 +24,9 @@
             exhibitTest.Add(exhibit1);
             exhibitTest.Add(exhibit2);
             context.Employee.AddOrUpdate(
-                e => e.LastName,
-                new Employee { FirstName = "Tim", LastName = "Maddux", Age = 30, Exhibits = exhibitTest }
-                //new Employee { LastName = "Ventura" },
-                //new Employee { LastName = "Cramb" }
+                e => e.LastName, //new Employee { FirstName = "Tim", LastName = "Maddux", Age = 30, Exhibits = exhibitTest }
+                new Employee { FirstName = "Dan", LastName = "Ventura", Age = 20, Exhibits = exhibitTest }
+                //new Employee { FirstName = "David", LastName = "Cramb", Age = 33, Exhibits = exhibitTest }
                 );
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
